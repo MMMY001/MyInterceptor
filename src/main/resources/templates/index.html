@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+这里是主页
+<button type="submit" id="click_me" onclick="click_me()">点我呀</button>
+
+
+<script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+function click_me() {
+    $.ajax({
+        type:"get"
+        ,url:"/api/jump"
+        ,success:function(data){
+            if(data == "OK"){
+                alert("成功");
+                window.location.href="hello";
+            }else{
+                alert("权限不足!!!")
+            }
+        }
+    });
+}
+</script>
+</body>
+</html>
